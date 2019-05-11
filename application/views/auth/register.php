@@ -8,46 +8,59 @@
 				<div class="col-lg">
 					<div class="p-5">
 						<div class="text-center">
-							<h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+							<h1 class="h4 text-gray-900 mb-4">Buat Akun Kamu!</h1>
 						</div>
-						<form class="user">
+						<form class="user" method="post" action="<?= base_url().'auth/registration'; ?>">
 							<div class="form-group">
-								<input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Name">
+								<input type="text" class="form-control form-control-user" name="nama" value="<?= set_value('nama'); ?>" placeholder="Nama">
+								<?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
 							</div>
 							<div class="form-group row">
 								<div class="col-sm-6 mb-3 mb-sm-0">
-									<input type="text" class="form-control form-control-user" id="name" name="nim" placeholder="NIM">
+									<input type="text" class="form-control form-control-user" name="nim" value="<?= set_value('nim'); ?>" placeholder="NIM">
+									<?= form_error('nim', '<small class="text-danger pl-3">', '</small>') ?>
 								</div>
 								<div class="col-sm-6">
-									<input type="text" class="form-control form-control-user" id="name" name="fakultas" placeholder="Fakultas">
+									<input type="text" class="form-control form-control-user" name="fakultas" value="<?= set_value('fakultas'); ?>"  placeholder="Fakultas">
+									<?= form_error('fakultas', '<small class="text-danger pl-3">', '</small>') ?>
 								</div>
 							</div>
 							<div class="form-group row">
 								<div class="col-sm-6 mb-3 mb-sm-0">
-									<input type="text" class="form-control form-control-user" id="name" name="Jurusan" placeholder="Jurusan">
+									<input type="text" class="form-control form-control-user" name="jurusan" value="<?= set_value('jurusan'); ?>"  placeholder="Jurusan">
+									<?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>') ?>
 								</div>
 								<div class="col-sm-6">
-									<input type="text" class="form-control form-control-user" id="name" name="angkatan" placeholder="Angkatan">
+									<input type="text" class="form-control form-control-user" name="angkatan" value="<?= set_value('angkatan'); ?>"  placeholder="Angkatan">
+									<?= form_error('angkatan', '<small class="text-danger pl-3">', '</small>') ?>
 								</div>
+							</div>
+							<hr>
+							<div class="form-group">
+								<input type="text" class="form-control form-control-user" name="username" value="<?= set_value('username'); ?>"  placeholder="Username">
+								<?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address">
+								<input type="text" class="form-control form-control-user" name="email" value="<?= set_value('email'); ?>"  placeholder="Alamat Email">
+								<?= form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
 							</div>
 							<div class="form-group row">
 								<div class="col-sm-6 mb-3 mb-sm-0">
-									<input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Password">
+									<input type="password" class="form-control form-control-user" name="password1" placeholder="Password">
+									<?= form_error('password1', '<small class="text-danger pl-3">', '</small>') ?>
 								</div>
 								<div class="col-sm-6">
-									<input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Password">
+									<input type="password" class="form-control form-control-user" name="password2" placeholder="Password Ulang">
+									<?= form_error('password2', '<small class="text-danger pl-3">', '</small>') ?>
 								</div>
 							</div>
-							<a href="#" class="btn btn-primary btn-user btn-block">
-								Register Account
-							</a>
+							<button type="submit" class="btn btn-primary btn-user btn-block">
+								Register Akun
+							</button>
 						</form>
 						<hr>
 						<div class="text-center">
-							<a class="small" href="<?= base_url().'auth'; ?>">Already have an account? Login!</a>
+							<a class="small" href="<?= base_url().'auth'; ?>">Sudah punya akun sebelumnya? Login!</a>
 						</div>
 					</div>
 				</div>

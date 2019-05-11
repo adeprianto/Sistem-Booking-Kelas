@@ -12,11 +12,14 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login Page</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Halaman Login</h1>
                                 </div>
+                                
+                                <?= $this->session->flashdata('pesan') ?>
+
                                 <form class="user">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="NIM">
+                                        <input type="text" class="form-control form-control-user" id="email" name="username" placeholder="Username">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
@@ -27,7 +30,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url().'auth/registration'; ?>">Create an Account!</a>
+                                    <a class="small" href="<?= base_url().'auth/registration'; ?>">Buat Akun Kamu!</a>
                                 </div>
                             </div>
                         </div>
