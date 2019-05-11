@@ -52,4 +52,32 @@ class Auth extends CI_Controller {
 		}
 
 	}
+
+	public function verification()
+	{
+
+		if ($this->db->get_where('t_akun_mhs', ['username' => $this->input->post('username'), 'password' => $this->input->post('password')])->num_rows() > 0) 
+		{
+			$this->db->select('nama, nim, jurusan, fakultas, angkatan');
+			$this->db->from('t_akun_mhs');
+			$this->db->join('t_mahasiswa', 't_akun_mhs.id_mhs = t_mahasiswa.id');
+			$this->db->where('username', $this->input->post('username'));
+			$this->db->where('password', $this->input->post('password'));
+
+			$data = $this->db->get()->result_array()[0];
+			
+			$this->session->set_userdata($data);
+		} 
+		else if ($this->db->get_where('t_admin', ['username' => $this->input->post('username'), 'password' => $this->input->post('password')])->num_rows() > 0) 
+		{
+			$data = $this->db->get_where('t_admin', ['username' => $this->input->post('username'), 'password' => $this->input->post('password')])->result_array()[0];
+
+			$this->session->set_userdata($data);
+		} 
+		else 
+		{
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"><strong>Gagal Login!</strong> akun tidak ditemukan atau username dan password tidak benar</div>');
+			redirect('Auth');
+		}
+	} 
 }
