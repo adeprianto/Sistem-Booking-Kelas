@@ -14,7 +14,6 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['judul'] = "Dashboard";
-
         $data['data_kelas'] = $this->Kelas_model->getAllKelas();
 
         $this->load->view('templates/admin/header', $data);
@@ -42,9 +41,36 @@ class Admin extends CI_Controller
         }
     }
 
+    public function editKelas()
+    {
+        $data['judul'] = "Edit Data Kelas";
+        $data['data_kelas'] = $this->Kelas_model->getAllKelas();
+
+        $this->load->view('templates/admin/header', $data);
+        $this->load->view('templates/admin/sidebar');
+        $this->load->view('templates/admin/topbar');
+        $this->load->view('admin/edit_kelas', $data);
+        $this->load->view('templates/admin/footer');
+    }
+
+    public function modelEditKelas($id)
+    {
+        $this->Kelas_model->editKelas($id);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> data berhasil diubah</div>');
+        redirect('admin/editKelas');
+    }
+
+    public function modelDeleteKelas($id)
+    {
+        $this->Kelas_model->deleteKelas($id);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> data berhasil dihapus</div>');
+        redirect('admin/editKelas');
+    }
+
     public function modelAddKelas()
     {
         $this->Kelas_model->addKelas();
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> data berhasil ditambah</div>');
         redirect('admin');
     }
 

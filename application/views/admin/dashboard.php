@@ -1,9 +1,9 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Data Kelas</h3>
+    <?= $this->session->flashdata('pesan') ?>
 
-    <hr>
+    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Data Kelas</h3>
 
     <table class="table table-bordered bg-white mb-5">
         <thead>
@@ -25,6 +25,8 @@
             } ?>
         </tbody>
     </table>
+
+    <hr>
 
     <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Penggunaan Kelas</h3>
 

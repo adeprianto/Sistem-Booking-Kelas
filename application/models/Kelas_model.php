@@ -8,6 +8,7 @@ class Kelas_model extends CI_Model
         return $this->db->get('t_ruangan')->result();
     }
 
+
     public function getPartKelas()
     {
         return $this->db->get('t_ruangan', 5)->result();
@@ -21,5 +22,20 @@ class Kelas_model extends CI_Model
         ];
 
         $this->db->insert('t_ruangan', $data);
+    }
+
+    public function editKelas($id)
+    {
+        $data = [
+            'nama_ruangan' => $this->input->post('nama_kelas'),
+            'kapasitas' => $this->input->post('kapasitas')
+        ];
+
+        $this->db->update('t_ruangan', $data, ['id_ruangan' => $id]);
+    }
+
+    public function deleteKelas($id)
+    {
+        $this->db->delete('t_ruangan', ['id_ruangan' => $id]);
     }
 }
