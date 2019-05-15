@@ -32,12 +32,11 @@
             <nav class="navbar navbar-expand navbar-light bg-primary topbar mb-4 static-top shadow">
 
                 <div>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="<?= base_url() . 'user'; ?>">
                         <h2>
                             <i class="fas fa-school fa-sm fa-fw mr-1 text-light"></i>
                             <span class="text-light text-lg"><strong>SIPEKA</strong></span>
                         </h2>
-
                     </a>
                 </div>
 
@@ -45,21 +44,27 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
+                        <a class="nav-link text-light" href="<?= base_url() . 'user'; ?>">
                             <i class="fas fa-home fa-sm fa-fw mr-2 text-light"></i>
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
-                            <i class="fas fa-calendar-alt fa-sm fa-fw mr-2 text-light"></i>
-                            Jadwal Kuliah
+                        <a class="nav-link text-light" href="<?= base_url() . 'user/dataKelas'; ?>">
+                            <i class="fas fa-school fa-sm fa-fw mr-2 text-light"></i>
+                            Data Kelas
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">
                             <i class="fas fa-clock fa-sm fa-fw mr-2 text-light"></i>
                             Jadwal Kelas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <i class="fas fa-calendar-alt fa-sm fa-fw mr-2 text-light"></i>
+                            Jadwal Kuliah
                         </a>
                     </li>
                     <li class="nav-item">
@@ -94,3 +99,6 @@
 
             </nav>
             <!-- End of Topbar -->
+
+            <!-- Main Content -->
+            <div id="content" style="min-height: 620px;">
