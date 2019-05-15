@@ -8,19 +8,18 @@
     <table class="table table-bordered bg-white mb-5">
         <thead>
             <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Nama Kelas</th>
-                <th scope="col">Kapasitas</th>
+                <th scope="col" class="bg-primary text-light">No.</th>
+                <th scope="col" class="bg-primary text-light">Nama Kelas</th>
+                <th scope="col" class="bg-primary text-light">Kapasitas</th>
             </tr>
         </thead>
         <tbody>
             <?php $i = 1;
             foreach ($data_kelas as $kelas) { ?>
                 <tr>
-                    <th scope="row"><?= $i; ?></th>
-                    <td><?= $kelas->nama_ruangan; ?></td>
-                    <td><?= $kelas->kapasitas; ?></td>
-                    <td>Otto</td>
+                    <th scope="row" class="text-gray-800"><?= $i; ?></th>
+                    <td class="text-gray-800"><?= $kelas->nama_ruangan; ?></td>
+                    <td class="text-gray-800"><?= $kelas->kapasitas; ?></td>
                 </tr>
                 <?php $i++;
             } ?>
