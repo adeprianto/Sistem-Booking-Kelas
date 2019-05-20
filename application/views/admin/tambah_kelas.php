@@ -7,12 +7,12 @@
         <form action="<?= base_url() . 'admin/addKelas'; ?>" method="post">
             <div class="form-group">
                 <label>Nama Kelas</label>
-                <input type="text" class="form-control" name="nama_kelas" placeholder="Masukkan Nama Kelas">
+                <input type="text" class="form-control" name="nama_kelas" value="<?= set_value('nama_kelas'); ?>" placeholder="Masukkan Nama Kelas">
                 <?= form_error('nama_kelas', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>Kapasitas</label>
-                <input type="text" class="form-control" name="kapasitas" placeholder="Password">
+                <input type="text" class="form-control" name="kapasitas" value="<?= set_value('kapasitas'); ?>" placeholder="Masukkan Kapasitas Kelas Yang Dapat Ditampung">
                 <?= form_error('kapasitas', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -28,7 +28,36 @@
 
     <hr>
 
-    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Penggunaan Kelas</h3>
+    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Mata Kuliah</h3>
+
+    <table class="table table-bordered bg-white mb-5">
+        <thead>
+            <tr>
+                <th scope="col" class="bg-primary text-light">No.</th>
+                <th scope="col" class="bg-primary text-light">Kode Matkul</th>
+                <th scope="col" class="bg-primary text-light">Nama Matkul</th>
+                <th scope="col" class="bg-primary text-light">Nama Dosen Pengajar</th>
+                <th scope="col" class="bg-primary text-light">SKS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $i = 1;
+            foreach ($data_matkul as $matkul) { ?>
+                <tr>
+                    <th scope="row" class="text-gray-800"><?= $i; ?></th>
+                    <td class="text-gray-800"><?= $matkul->kode_matkul; ?></td>
+                    <td class="text-gray-800"><?= $matkul->nama_matkul; ?></td>
+                    <td class="text-gray-800"><?= $matkul->nama_dosen; ?></td>
+                    <td class="text-gray-800"><?= $matkul->sks; ?></td>
+                </tr>
+                <?php $i++;
+            } ?>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Jadwal Kuliah</h3>
 
     <table class="table table-bordered bg-white mb-5">
         <thead>

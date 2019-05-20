@@ -5,7 +5,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url() . 'admin'; ?>">
             <div class="sidebar-brand-icon">
                 <i class="fas fa-school"></i>
             </div>
@@ -51,22 +51,22 @@
         <hr class="sidebar-divider">
 
         <div class="sidebar-heading">
-            Olah Jadwal Kelas
+            Olah Mata Kuliah
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= base_url() . 'admin/addMatkul'; ?>">
                 <i class="fas fa-fw fa-plus"></i>
-                <span>Tambah Jadwal Kelas</span>
+                <span>Tambah Mata Kuliah</span>
             </a>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="<?= base_url() . 'admin/editMatkul'; ?>">
                 <i class="fas fa-fw fa-pen"></i>
-                <span>Edit Jadwal Kelas</span>
+                <span>Edit Mata Kuliah</span>
             </a>
         </li>
 
