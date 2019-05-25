@@ -62,31 +62,26 @@
     <table class="table table-bordered bg-white mb-5">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col" class="bg-primary text-light">Hari</th>
+                <th scope="col" class="bg-primary text-light">Mata Kuliah</th>
+                <th scope="col" class="bg-primary text-light">Dosen Pengajar</th>
+                <th scope="col" class="bg-primary text-light">SKS</th>
+                <th scope="col" class="bg-primary text-light">Ruangan</th>
+                <th scope="col" class="bg-primary text-light">Waktu Mulai</th>
+                <th scope="col" class="bg-primary text-light">Waktu Akhir</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
+        <?php foreach ($data_jadwal as $jadwal) : ?>
+            <tbody>
+                <td class="text-gray-800"><?= $jadwal->hari; ?></td>
+                <td class="text-gray-800"><?= $jadwal->nama_matkul; ?></td>
+                <td class="text-gray-800"><?= $jadwal->nama_dosen; ?></td>
+                <td class="text-gray-800"><?= $jadwal->sks; ?></td>
+                <td class="text-gray-800"><?= $jadwal->nama_ruangan; ?></td>
+                <td class="text-gray-800"><?= $jadwal->waktu_mulai; ?></td>
+                <td class="text-gray-800"><?= $jadwal->waktu_akhir; ?></td>
+            </tbody>
+        <?php endforeach; ?>
     </table>
 
     <hr>

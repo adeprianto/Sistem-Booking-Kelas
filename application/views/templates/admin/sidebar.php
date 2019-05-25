@@ -33,7 +33,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url() . 'admin/addKelas'; ?>">
+            <a class="nav-link" href="<?= base_url() . 'kelas/addKelas'; ?>">
                 <i class="fas fa-fw fa-plus"></i>
                 <span>Tambah Data Kelas</span>
             </a>
@@ -41,7 +41,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url() . 'admin/editKelas'; ?>">
+            <a class="nav-link collapsed" href="<?= base_url() . 'kelas/editKelas'; ?>">
                 <i class="fas fa-fw fa-pen"></i>
                 <span>Edit Data Kelas</span>
             </a>
@@ -56,7 +56,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url() . 'admin/addMatkul'; ?>">
+            <a class="nav-link" href="<?= base_url() . 'matkul/addMatkul'; ?>">
                 <i class="fas fa-fw fa-plus"></i>
                 <span>Tambah Mata Kuliah</span>
             </a>
@@ -64,7 +64,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url() . 'admin/editMatkul'; ?>">
+            <a class="nav-link collapsed" href="<?= base_url() . 'matkul/editMatkul'; ?>">
                 <i class="fas fa-fw fa-pen"></i>
                 <span>Edit Mata Kuliah</span>
             </a>
@@ -78,7 +78,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= base_url() . 'jadwal/addJadwal'; ?>">
                 <i class="fas fa-fw fa-plus"></i>
                 <span>Tambah Jadwal Kuliah</span>
             </a>

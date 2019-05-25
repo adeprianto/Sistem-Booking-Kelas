@@ -60,26 +60,26 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form action="<?= base_url() . 'admin/modelEditMatkul/' . $matkul->id_matkul; ?>" method="post">
+                <form action="<?= base_url() . 'matkul/modelEditMatkul/' . $matkul->id_matkul; ?>" method="post">
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Kode Mata Kuliah</label>
-                            <input type="text" class="form-control" name="kode_matkul" value="<?= $matkul->kode_matkul; ?>" placeholder="Masukkan Kode Mata Kuliah">
+                            <input type="text" class="form-control" name="kode_matkul" value="<?= $matkul->kode_matkul; ?>" placeholder="Masukkan kode mata kuliah">
                             <?= form_error('kode_matkul', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Nama Mata Kuliah</label>
-                            <input type="text" class="form-control" name="nama_matkul" value="<?= $matkul->nama_matkul; ?>" placeholder="Masukkan Nama Mata Kuliah">
+                            <input type="text" class="form-control" name="nama_matkul" value="<?= $matkul->nama_matkul; ?>" placeholder="Masukkan nama mata kuliah">
                             <?= form_error('nama_matkul', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Dosen Pengajar</label>
-                            <input type="text" class="form-control" name="nama_dosen" value="<?= $matkul->nama_dosen; ?>" placeholder="Masukkan Nama Dosen Pengajar Mata Kuliah">
+                            <input type="text" class="form-control" name="nama_dosen" value="<?= $matkul->nama_dosen; ?>" placeholder="Masukkan nama dosen pengajar mata kuliah">
                             <?= form_error('nama_dosen', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>SKS</label>
-                            <input type="text" class="form-control" name="sks" value="<?= $matkul->sks; ?>" placeholder="Masukkan SKS Mata Kuliah">
+                            <input type="text" class="form-control" name="sks" value="<?= $matkul->sks; ?>" placeholder="Masukkan SKS mata kuliah">
                             <?= form_error('sks', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a href="<?= base_url() . 'admin/modelDeleteMatkul/' . $matkul->id_matkul; ?>" class="btn btn-primary">Hapus</a>
+                    <a href="<?= base_url() . 'matkul/modelDeleteMatkul/' . $matkul->id_matkul; ?>" class="btn btn-primary">Hapus</a>
                 </div>
             </div>
         </div>
