@@ -56,16 +56,16 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form action="<?= base_url() . 'admin/modelEditKelas/' . $kelas->id_ruangan; ?>" method="post">
+                <form action="<?= base_url() . 'kelas/modelEditKelas/' . $kelas->id_ruangan; ?>" method="post">
                     <div class="modal-body">
 
                         <div class="form-group">
                             <label>Nama Kelas</label>
-                            <input type="text" class="form-control" name="nama_kelas" value="<?= $kelas->nama_ruangan; ?>" placeholder="Masukkan Nama Kelas">
+                            <input type="text" class="form-control" name="nama_kelas" value="<?= $kelas->nama_ruangan; ?>" placeholder="Masukkan nama kelas">
                         </div>
                         <div class="form-group">
                             <label>Kapasitas</label>
-                            <input type="text" class="form-control" name="kapasitas" value="<?= $kelas->kapasitas; ?>" placeholder="Masukkan Kapasitas Kelas Yang Dapat Ditampung">
+                            <input type="text" class="form-control" name="kapasitas" value="<?= $kelas->kapasitas; ?>" placeholder="Masukkan kapasitas kelas yang dapat ditampung">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -94,7 +94,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a href="<?= base_url() . 'admin/modelDeleteKelas/' . $kelas->id_ruangan; ?>" class="btn btn-primary">Hapus</a>
+                    <a href="<?= base_url() . 'kelas/modelDeleteKelas/' . $kelas->id_ruangan; ?>" class="btn btn-primary">Hapus</a>
                 </div>
             </div>
         </div>
