@@ -31,10 +31,38 @@ class Jadwal extends CI_Controller
         }
     }
 
+    public function editJadwal()
+    {
+        $data['judul'] = "Edit Jadwal Mata Kuliah";
+        $data['data_jadwal'] = $this->Jadwal_model->getAllJadwal();
+        $data['data_matkul'] = $this->Matkul_model->getAllMatkul();
+        $data['data_kelas'] = $this->Kelas_model->getAllKelas();
+
+        $this->load->view('templates/admin/header', $data);
+        $this->load->view('templates/admin/sidebar');
+        $this->load->view('templates/admin/topbar');
+        $this->load->view('admin/edit_jadwal', $data);
+        $this->load->view('templates/admin/footer');
+    }
+
     public function modelAddJadwal()
     {
         $this->Jadwal_model->addJadwal();
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> data berhasil ditambah</div>');
         redirect('admin');
+    }
+
+    public function modelEditJadwal($id)
+    {
+        $this->Jadwal_model->editJadwal($id);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> data berhasil diubah</div>');
+        redirect('jadwal/editJadwal');
+    }
+
+    public function modelDeleteJadwal($id)
+    {
+        $this->Jadwal_model->deleteJadwal($id);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> data berhasil dihapus</div>');
+        redirect('jadwal/editJadwal');
     }
 }
