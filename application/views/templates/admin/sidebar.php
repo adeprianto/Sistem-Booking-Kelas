@@ -86,7 +86,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="<?= base_url() . 'jadwal/editJadwal'; ?>">
                 <i class="fas fa-fw fa-pen"></i>
                 <span>Edit Jadwal Kuliah</span>
             </a>

@@ -3,10 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Matkul_model extends CI_Model
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Jadwal_model');
+    }
 
     public function getMatkulById($id)
     {
-        return $this->db->get('t_matkul', ['id_matkul' => $id])->result();
+        return $this->db->get_where('t_matkul', ['id_matkul' => $id])->result();
     }
 
     public function getAllMatkul()
@@ -36,6 +41,8 @@ class Matkul_model extends CI_Model
         ];
 
         $this->db->update('t_matkul', $data, ['id_matkul' => $id]);
+
+        $this->Jadwal_model->editAllEndTime($id);
     }
 
     public function deleteMatkul($id)
