@@ -14,6 +14,26 @@
                 </select>
             </div>
             <div class="form-group">
+                <label>Dosen Pengajar</label>
+                <input type="text" class="form-control" name="nama_dosen" placeholder="Masukkan nama dosen pengajar mata kuliah">
+                <?= form_error('nama_dosen', '<small class="text-danger pl-3">', '</small>') ?>
+            </div>
+            <div class="form-group">
+                <label>Jurusan</label>
+                <input type="text" class="form-control" name="jurusan" placeholder="Masukkan jurusan">
+                <?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>') ?>
+            </div>
+            <div class="form-group">
+                <label>Angkatan</label>
+                <input type="text" class="form-control" name="angkatan" placeholder="Masukkan angkatan">
+                <?= form_error('angkatan', '<small class="text-danger pl-3">', '</small>') ?>
+            </div>
+            <div class="form-group">
+                <label>Kelas</label>
+                <input type="text" class="form-control" name="kelas" placeholder="Masukkan kelas">
+                <?= form_error('kelas', '<small class="text-danger pl-3">', '</small>') ?>
+            </div>
+            <div class="form-group">
                 <label>Ruangan</label>
                 <select class="form-control" name="ruangan">
                     <?php foreach ($data_kelas as $kelas) : ?>
@@ -24,11 +44,9 @@
             <div class="form-group">
                 <label>Hari Perkuliahan</label>
                 <select class="form-control" name="hari">
-                    <option value="Senin">Senin</option>
-                    <option value="Selasa">Selasa</option>
-                    <option value="Rabu">Rabu</option>
-                    <option value="Kamis">Kamis</option>
-                    <option value="Jum'at">Jum'at</option>
+                    <?php foreach ($data_hari as $hari) : ?>
+                        <option value="<?= $hari->id_hari; ?>"><?= $hari->nama_hari; ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">
@@ -36,7 +54,7 @@
                 <input type="time" class="form-control" name="waktu_mulai" placeholder="Masukkan waktu mulai">
                 <?= form_error('waktu_mulai', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary mb-5">Submit</button>
         </form>
     </div>
 

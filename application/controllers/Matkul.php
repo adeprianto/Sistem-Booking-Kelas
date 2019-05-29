@@ -14,7 +14,6 @@ class Matkul extends CI_Controller
     {
         $this->form_validation->set_rules('kode_matkul', 'Kode Mata Kuliah', 'required|trim|is_unique[t_matkul.kode_matkul]', array('is_unique' => 'Kode matkul sudah ada'));
         $this->form_validation->set_rules('nama_matkul', 'Nama Mata Kuliah', 'required|trim');
-        $this->form_validation->set_rules('nama_dosen', 'Nama Dosen Pengajar', 'required|trim');
         $this->form_validation->set_rules('sks', 'SKS', 'required|trim');
 
         if ($this->form_validation->run() == false) {

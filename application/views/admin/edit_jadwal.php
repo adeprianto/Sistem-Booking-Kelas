@@ -10,6 +10,10 @@
             <tr>
                 <th scope="col" class="bg-primary text-light">Hari</th>
                 <th scope="col" class="bg-primary text-light">Mata Kuliah</th>
+                <th scope="col" class="bg-primary text-light">Nama Dosen</th>
+                <th scope="col" class="bg-primary text-light">Jurusan</th>
+                <th scope="col" class="bg-primary text-light">Angkatan</th>
+                <th scope="col" class="bg-primary text-light">Kelas</th>
                 <th scope="col" class="bg-primary text-light">Ruangan</th>
                 <th scope="col" class="bg-primary text-light">Waktu Mulai</th>
                 <th scope="col" class="bg-primary text-light">Waktu Akhir</th>
@@ -22,6 +26,10 @@
                 <tr>
                     <td class="text-gray-800"><?= $jadwal->hari; ?></td>
                     <td class="text-gray-800"><?= $jadwal->nama_matkul; ?></td>
+                    <td class="text-gray-800"><?= $jadwal->nama_dosen; ?></td>
+                    <td class="text-gray-800"><?= $jadwal->jurusan; ?></td>
+                    <td class="text-gray-800"><?= $jadwal->angkatan; ?></td>
+                    <td class="text-gray-800"><?= $jadwal->kelas; ?></td>
                     <td class="text-gray-800"><?= $jadwal->nama_ruangan; ?></td>
                     <td class="text-gray-800"><?= $jadwal->waktu_mulai; ?></td>
                     <td class="text-gray-800"><?= $jadwal->waktu_akhir; ?></td>
@@ -46,85 +54,109 @@
             } ?>
         </tbody>
     </table>
-</div>
-<!-- /.container-fluid -->
 
-<!-- Edit Modal-->
-<?php foreach ($data_jadwal as $jadwal) : ?>
-    <div class="modal fade" id="editModal<?= $jadwal->id_jadwal; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+    <!-- Edit Modal-->
+    <?php foreach ($data_jadwal as $jadwal) : ?>
+        <div class="modal fade" id="editModal<?= $jadwal->id_jadwal; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <form action="<?= base_url() . 'jadwal/modelEditJadwal/' . $jadwal->id_jadwal; ?>" method="post">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Hari</label>
+                                <select class="form-control" name="hari">
+                                    <?php foreach ($data_hari as $hari) : ?>
+                                        <?php if ($jadwal->hari == $hari->nama_hari) { ?>
+                                            <option value="<?= $hari->id_hari; ?>" selected><?= $hari->nama_hari; ?></option>
+                                        <?php } ?>
+                                        <option value="<?= $hari->id_hari; ?>"><?= $hari->nama_hari; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Mata Kuliah</label>
+                                <select class="form-control" name="matkul">
+                                    <?php foreach ($data_matkul as $matkul) : ?>
+                                        <?php if ($jadwal->nama_matkul == $matkul->nama_matkul) { ?>
+                                            <option value="<?= $matkul->id_matkul; ?>" selected><?= $matkul->nama_matkul; ?> (<?= $matkul->sks; ?> SKS)</option>
+                                        <?php } ?>
+                                        <option value="<?= $matkul->id_matkul; ?>"><?= $matkul->nama_matkul; ?> (<?= $matkul->sks; ?> SKS)</option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Dosen Pengajar</label>
+                                <input type="text" class="form-control" name="nama_dosen" value="<?= $jadwal->nama_dosen; ?>" placeholder="Masukkan nama dosen pengajar mata kuliah">
+                            </div>
+                            <div class="form-group">
+                                <label>Jurusan</label>
+                                <input type="text" class="form-control" name="jurusan" value="<?= $jadwal->jurusan; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Angkatan</label>
+                                <input type="text" class="form-control" name="angkatan" value="<?= $jadwal->angkatan; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Kelas</label>
+                                <input type="text" class="form-control" name="kelas" value="<?= $jadwal->kelas; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Ruangan</label>
+                                <select class="form-control" name="ruangan">
+                                    <?php foreach ($data_kelas as $kelas) : ?>
+                                        <?php if ($jadwal->nama_ruangan == $kelas->nama_ruangan) { ?>
+                                            <option value="<?= $kelas->id_ruangan; ?>" selected><?= $kelas->nama_ruangan; ?></option>
+                                        <?php } ?>
+                                        <option value="<?= $kelas->id_ruangan; ?>"><?= $kelas->nama_ruangan; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Waktu Mulai Perkuliahan</label>
+                                <input type="time" class="form-control" name="waktu_mulai" value="<?= $jadwal->jam_masuk; ?>">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-primary" type="submit">Edit</a>
+                        </div>
+                    </form>
                 </div>
-                <form action="<?= base_url() . 'jadwal/modelEditJadwal/' . $jadwal->id_jadwal; ?>" method="post">
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+    <!-- Delete Modal-->
+    <?php foreach ($data_jadwal as $jadwal) : ?>
+        <div class="modal fade" id="deleteModal<?= $jadwal->id_jadwal; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label>Hari</label>
-                            <select class="form-control" name="hari">
-                                <option value="Senin">Senin</option>
-                                <option value="Selasa">Selasa</option>
-                                <option value="Rabu">Rabu</option>
-                                <option value="Kamis">Kamis</option>
-                                <option value="Jum'at">Jum'at</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Mata Kuliah</label>
-                            <select class="form-control" name="matkul">
-                                <?php foreach ($data_matkul as $matkul) : ?>
-                                    <option value="<?= $matkul->id_matkul; ?>"><?= $matkul->nama_matkul; ?> (<?= $matkul->sks; ?> SKS)</option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Ruangan</label>
-                            <select class="form-control" name="ruangan">
-                                <?php foreach ($data_kelas as $kelas) : ?>
-                                    <option value="<?= $kelas->id_ruangan; ?>"><?= $kelas->nama_ruangan; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Waktu Mulai Perkuliahan</label>
-                            <input type="time" class="form-control" name="waktu_mulai" value="<?= $jadwal->jam_masuk; ?>">
-                        </div>
+                        <span>Data yang dihapus akan hilang <strong>permanen</strong>. Yakin hapus data ?</span>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button class="btn btn-primary" type="submit">Edit</a>
+                        <a href="<?= base_url() . 'jadwal/modelDeleteJadwal/' . $jadwal->id_jadwal; ?>" class="btn btn-primary">Hapus</a>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-<?php endforeach; ?>
+    <?php endforeach; ?>
 
-<!-- Delete Modal-->
-<?php foreach ($data_jadwal as $jadwal) : ?>
-    <div class="modal fade" id="deleteModal<?= $jadwal->id_jadwal; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <span>Data yang dihapus akan hilang <strong>permanen</strong>. Yakin hapus data ?</span>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a href="<?= base_url() . 'jadwal/modelDeleteJadwal/' . $jadwal->id_jadwal; ?>" class="btn btn-primary">Hapus</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
+</div>
+<!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->

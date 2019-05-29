@@ -14,12 +14,17 @@ class Jadwal extends CI_Controller
 
     public function addJadwal()
     {
+        $this->form_validation->set_rules('nama_dosen', 'Nama Dosen Pengajar', 'required|trim');
         $this->form_validation->set_rules('waktu_mulai', 'Waktu mulai', 'required|trim');
+        $this->form_validation->set_rules('jurusan', 'Jurusan', 'required|trim');
+        $this->form_validation->set_rules('angkatan', 'Angkatan', 'required|trim');
+        $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = "Tambah Jadwal Mata Kuliah";
             $data['data_matkul'] = $this->Matkul_model->getAllMatkul();
             $data['data_kelas'] = $this->Kelas_model->getAllKelas();
+            $data['data_hari'] = $this->Jadwal_model->getAllHari();
 
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar');
@@ -35,6 +40,7 @@ class Jadwal extends CI_Controller
     {
         $data['judul'] = "Edit Jadwal Mata Kuliah";
         $data['data_jadwal'] = $this->Jadwal_model->getAllJadwal();
+        $data['data_hari'] = $this->Jadwal_model->getAllHari();
         $data['data_matkul'] = $this->Matkul_model->getAllMatkul();
         $data['data_kelas'] = $this->Kelas_model->getAllKelas();
 

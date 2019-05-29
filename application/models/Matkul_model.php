@@ -24,7 +24,6 @@ class Matkul_model extends CI_Model
         $data = [
             'kode_matkul' => $this->input->post('kode_matkul'),
             'nama_matkul' => $this->input->post('nama_matkul'),
-            'nama_dosen' => $this->input->post('nama_dosen'),
             'sks' => $this->input->post('sks')
         ];
 
@@ -36,7 +35,6 @@ class Matkul_model extends CI_Model
         $data = [
             'kode_matkul' => $this->input->post('kode_matkul'),
             'nama_matkul' => $this->input->post('nama_matkul'),
-            'nama_dosen' => $this->input->post('nama_dosen'),
             'sks' => $this->input->post('sks')
         ];
 

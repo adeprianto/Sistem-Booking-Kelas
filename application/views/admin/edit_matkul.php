@@ -11,7 +11,6 @@
                 <th scope="col" class="bg-primary text-light">No.</th>
                 <th scope="col" class="bg-primary text-light">Kode Mata Kuliah</th>
                 <th scope="col" class="bg-primary text-light">Nama Mata Kuliah</th>
-                <th scope="col" class="bg-primary text-light">Nama Dosen Pengajar</th>
                 <th scope="col" class="bg-primary text-light">SKS</th>
                 <th scope="col" class="bg-primary text-light text-center w-25">Action</th>
             </tr>
@@ -23,7 +22,6 @@
                     <th scope="row" class="text-gray-800"><?= $i; ?></th>
                     <td class="text-gray-800"><?= $matkul->kode_matkul; ?></td>
                     <td class="text-gray-800"><?= $matkul->nama_matkul; ?></td>
-                    <td class="text-gray-800"><?= $matkul->nama_dosen; ?></td>
                     <td class="text-gray-800"><?= $matkul->sks; ?></td>
                     <td class="w-25">
                         <div class="row offset-lg-1">
@@ -65,22 +63,14 @@
                         <div class="form-group">
                             <label>Kode Mata Kuliah</label>
                             <input type="text" class="form-control" name="kode_matkul" value="<?= $matkul->kode_matkul; ?>" placeholder="Masukkan kode mata kuliah">
-                            <?= form_error('kode_matkul', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>Nama Mata Kuliah</label>
                             <input type="text" class="form-control" name="nama_matkul" value="<?= $matkul->nama_matkul; ?>" placeholder="Masukkan nama mata kuliah">
-                            <?= form_error('nama_matkul', '<small class="text-danger pl-3">', '</small>') ?>
-                        </div>
-                        <div class="form-group">
-                            <label>Dosen Pengajar</label>
-                            <input type="text" class="form-control" name="nama_dosen" value="<?= $matkul->nama_dosen; ?>" placeholder="Masukkan nama dosen pengajar mata kuliah">
-                            <?= form_error('nama_dosen', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                         <div class="form-group">
                             <label>SKS</label>
                             <input type="text" class="form-control" name="sks" value="<?= $matkul->sks; ?>" placeholder="Masukkan SKS mata kuliah">
-                            <?= form_error('sks', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
                     </div>
                     <div class="modal-footer">
