@@ -56,15 +56,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
-                            <i class="fas fa-clock fa-sm fa-fw mr-2 text-light"></i>
-                            Jadwal Kelas
+                        <a class="nav-link text-light" href="<?= base_url() . 'user/jadwalMatkul'; ?>">
+                            <i class="fas fa-calendar-alt fa-sm fa-fw mr-2 text-light"></i>
+                            Jadwal Kuliah
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">
-                            <i class="fas fa-calendar-alt fa-sm fa-fw mr-2 text-light"></i>
-                            Jadwal Kuliah
+                            <i class="fas fa-clipboard-check mr-2 text-light"></i>
+                            Booking Kelas
                         </a>
                     </li>
                     <li class="nav-item">

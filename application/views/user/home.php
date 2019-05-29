@@ -9,7 +9,48 @@
 
 <div class="container-fluid">
 
-    <h3 class="text-gray-800 mb-4 text-center font-weight-bold">Info Penggunaan Kelas</h3>
+    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Jadwal Perkuliahan</h3>
+
+    <table class="table table-bordered bg-white mb-5">
+        <thead class="bg-primary">
+            <tr>
+                <th scope="col" class="bg-primary text-light">Hari</th>
+                <th scope="col" class="bg-primary text-light">Mata Kuliah</th>
+                <th scope="col" class="bg-primary text-light">Dosen Pengajar</th>
+                <th scope="col" class="bg-primary text-light">Jurusan</th>
+                <th scope="col" class="bg-primary text-light">Angkatan</th>
+                <th scope="col" class="bg-primary text-light">Kelas</th>
+                <th scope="col" class="bg-primary text-light">SKS</th>
+                <th scope="col" class="bg-primary text-light">Ruangan</th>
+                <th scope="col" class="bg-primary text-light">Waktu Mulai</th>
+                <th scope="col" class="bg-primary text-light">Waktu Akhir</th>
+            </tr>
+        </thead>
+        <?php $i = 1;
+        foreach ($data_jadwal as $jadwal) { ?>
+            <tbody>
+                <td class="text-gray-800"><?= $jadwal->hari; ?></td>
+                <td class="text-gray-800"><?= $jadwal->nama_matkul; ?></td>
+                <td class="text-gray-800"><?= $jadwal->nama_dosen; ?></td>
+                <td class="text-gray-800"><?= $jadwal->jurusan; ?></td>
+                <td class="text-gray-800"><?= $jadwal->angkatan; ?></td>
+                <td class="text-gray-800"><?= $jadwal->kelas; ?></td>
+                <td class="text-gray-800"><?= $jadwal->sks; ?></td>
+                <td class="text-gray-800"><?= $jadwal->nama_ruangan; ?></td>
+                <td class="text-gray-800"><?= $jadwal->waktu_mulai; ?></td>
+                <td class="text-gray-800"><?= $jadwal->waktu_akhir; ?></td>
+            </tbody>
+            <?php if ($i++ == 5) break;
+        } ?>
+    </table>
+
+    <div class="text-center mt-4 mb-5">
+        <a href="<?= base_url() . 'user/jadwalMatkul'; ?>" class="btn btn-primary">Lihat Selengkapnya</a>
+    </div>
+
+    <hr>
+
+    <h3 class="text-gray-800 mb-4 mt-5 text-center font-weight-bold">Info Data Kelas</h3>
 
     <table class="table table-bordered bg-white mb-5">
         <thead class="bg-primary">
@@ -27,51 +68,13 @@
                     <td class="text-gray-800"><?= $kelas->nama_ruangan; ?></td>
                     <td class="text-gray-800"><?= $kelas->kapasitas; ?></td>
                 </tr>
-                <?php $i++;
+                <?php if ($i++ == 5)  break;
             } ?>
         </tbody>
     </table>
 
     <div class="text-center mt-4 mb-5">
         <a href="<?= base_url() . 'user/dataKelas'; ?>" class="btn btn-primary">Lihat Selengkapnya</a>
-    </div>
-
-    <hr>
-
-    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Penggunaan Kelas</h3>
-
-    <table class="table table-bordered bg-white">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="text-center mt-4 mb-5">
-        <button class="btn btn-primary">Lihat Selengkapnya</button>
     </div>
 
     <hr>

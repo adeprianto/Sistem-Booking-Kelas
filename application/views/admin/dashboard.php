@@ -36,7 +36,6 @@
                 <th scope="col" class="bg-primary text-light">No.</th>
                 <th scope="col" class="bg-primary text-light">Kode Matkul</th>
                 <th scope="col" class="bg-primary text-light">Nama Matkul</th>
-                <th scope="col" class="bg-primary text-light">Nama Dosen Pengajar</th>
                 <th scope="col" class="bg-primary text-light">SKS</th>
             </tr>
         </thead>
@@ -47,7 +46,6 @@
                     <th scope="row" class="text-gray-800"><?= $i; ?></th>
                     <td class="text-gray-800"><?= $matkul->kode_matkul; ?></td>
                     <td class="text-gray-800"><?= $matkul->nama_matkul; ?></td>
-                    <td class="text-gray-800"><?= $matkul->nama_dosen; ?></td>
                     <td class="text-gray-800"><?= $matkul->sks; ?></td>
                 </tr>
                 <?php $i++;
@@ -65,6 +63,9 @@
                 <th scope="col" class="bg-primary text-light">Hari</th>
                 <th scope="col" class="bg-primary text-light">Mata Kuliah</th>
                 <th scope="col" class="bg-primary text-light">Dosen Pengajar</th>
+                <th scope="col" class="bg-primary text-light">Jurusan</th>
+                <th scope="col" class="bg-primary text-light">Angkatan</th>
+                <th scope="col" class="bg-primary text-light">Kelas</th>
                 <th scope="col" class="bg-primary text-light">SKS</th>
                 <th scope="col" class="bg-primary text-light">Ruangan</th>
                 <th scope="col" class="bg-primary text-light">Waktu Mulai</th>
@@ -76,6 +77,9 @@
                 <td class="text-gray-800"><?= $jadwal->hari; ?></td>
                 <td class="text-gray-800"><?= $jadwal->nama_matkul; ?></td>
                 <td class="text-gray-800"><?= $jadwal->nama_dosen; ?></td>
+                <td class="text-gray-800"><?= $jadwal->jurusan; ?></td>
+                <td class="text-gray-800"><?= $jadwal->angkatan; ?></td>
+                <td class="text-gray-800"><?= $jadwal->kelas; ?></td>
                 <td class="text-gray-800"><?= $jadwal->sks; ?></td>
                 <td class="text-gray-800"><?= $jadwal->nama_ruangan; ?></td>
                 <td class="text-gray-800"><?= $jadwal->waktu_mulai; ?></td>

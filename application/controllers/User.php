@@ -7,14 +7,15 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // $this->load->library('form_validation');
         $this->load->model('Kelas_model');
+        $this->load->model('Jadwal_model');
     }
 
     public function index()
     {
         $data['judul'] = "Halaman Home";
-        $data['data_kelas'] = $this->Kelas_model->getPartKelas();
+        $data['data_kelas'] = $this->Kelas_model->getAllKelas();
+        $data['data_jadwal'] = $this->Jadwal_model->getAllJadwal();
 
         $this->load->view('templates/user/header', $data);
         $this->load->view('user/home', $data);
@@ -28,6 +29,15 @@ class User extends CI_Controller
 
         $this->load->view('templates/user/header', $data);
         $this->load->view('user/data_kelas', $data);
+        $this->load->view('templates/user/footer');
+    }
+
+    public function jadwalMatkul()
+    {
+        $data['data_jadwal'] = $this->Jadwal_model->getAllJadwal();
+
+        $this->load->view('templates/user/header', $data);
+        $this->load->view('user/jadwal_matkul', $data);
         $this->load->view('templates/user/footer');
     }
 
