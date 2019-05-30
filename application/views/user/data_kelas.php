@@ -1,6 +1,7 @@
 <div class="container-fluid">
 
-    <h3 class="text-gray-800 mb-4 font-weight-bold mx-3 my-4">Info Data Kelas</h3>
+    <h3 class="text-gray-800 mt-5 mb-2 text-center font-weight-bold">Info Data Kelas</h3>
+    <hr class="w-25" style="border: 1px solid #858796;">
 
     <table class="table table-bordered bg-white mt-5 mb-5 col-lg-10 offset-lg-1">
         <thead>

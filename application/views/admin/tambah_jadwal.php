@@ -16,22 +16,22 @@
             <div class="form-group">
                 <label>Dosen Pengajar</label>
                 <input type="text" class="form-control" name="nama_dosen" placeholder="Masukkan nama dosen pengajar mata kuliah">
-                <?= form_error('nama_dosen', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('nama_dosen', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>Jurusan</label>
                 <input type="text" class="form-control" name="jurusan" placeholder="Masukkan jurusan">
-                <?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('jurusan', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>Angkatan</label>
                 <input type="text" class="form-control" name="angkatan" placeholder="Masukkan angkatan">
-                <?= form_error('angkatan', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('angkatan', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>Kelas</label>
                 <input type="text" class="form-control" name="kelas" placeholder="Masukkan kelas">
-                <?= form_error('kelas', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('kelas', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>Ruangan</label>
@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label>Waktu Mulai</label>
                 <input type="time" class="form-control" name="waktu_mulai" placeholder="Masukkan waktu mulai">
-                <?= form_error('waktu_mulai', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('waktu_mulai', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <button type="submit" class="btn btn-primary mb-5">Submit</button>
         </form>

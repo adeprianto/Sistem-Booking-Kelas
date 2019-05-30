@@ -9,14 +9,15 @@ class Matkul_model extends CI_Model
         $this->load->model('Jadwal_model');
     }
 
+    public function getAllMatkul()
+    {
+        $this->db->group_by('kode_matkul', 'ASC');
+        return $this->db->get('t_matkul')->result();
+    }
+
     public function getMatkulById($id)
     {
         return $this->db->get_where('t_matkul', ['id_matkul' => $id])->result();
-    }
-
-    public function getAllMatkul()
-    {
-        return $this->db->get('t_matkul')->result();
     }
 
     public function addMatkul()

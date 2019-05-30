@@ -15,8 +15,8 @@
                 <th scope="col" class="bg-primary text-light">Angkatan</th>
                 <th scope="col" class="bg-primary text-light">Kelas</th>
                 <th scope="col" class="bg-primary text-light">Ruangan</th>
-                <th scope="col" class="bg-primary text-light">Waktu Mulai</th>
-                <th scope="col" class="bg-primary text-light">Waktu Akhir</th>
+                <th scope="col" class="bg-primary text-light">Mulai</th>
+                <th scope="col" class="bg-primary text-light">Akhir</th>
                 <th scope="col" class="bg-primary text-light text-center w-25">Action</th>
             </tr>
         </thead>
@@ -92,19 +92,19 @@
                             </div>
                             <div class="form-group">
                                 <label>Dosen Pengajar</label>
-                                <input type="text" class="form-control" name="nama_dosen" value="<?= $jadwal->nama_dosen; ?>" placeholder="Masukkan nama dosen pengajar mata kuliah">
+                                <input type="text" class="form-control" name="nama_dosen" value="<?= $jadwal->nama_dosen; ?>" placeholder="Masukkan nama dosen pengajar mata kuliah" required>
                             </div>
                             <div class="form-group">
                                 <label>Jurusan</label>
-                                <input type="text" class="form-control" name="jurusan" value="<?= $jadwal->jurusan; ?>">
+                                <input type="text" class="form-control" name="jurusan" value="<?= $jadwal->jurusan; ?>" placeholder="Masukkan jurusan" required>
                             </div>
                             <div class="form-group">
                                 <label>Angkatan</label>
-                                <input type="text" class="form-control" name="angkatan" value="<?= $jadwal->angkatan; ?>">
+                                <input type="text" class="form-control" name="angkatan" value="<?= $jadwal->angkatan; ?>" placeholder="Masukkan angkatan" required>
                             </div>
                             <div class="form-group">
                                 <label>Kelas</label>
-                                <input type="text" class="form-control" name="kelas" value="<?= $jadwal->kelas; ?>">
+                                <input type="text" class="form-control" name="kelas" value="<?= $jadwal->kelas; ?>" placeholder="Masukkan kelas" required>
                             </div>
                             <div class="form-group">
                                 <label>Ruangan</label>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Waktu Mulai Perkuliahan</label>
-                                <input type="time" class="form-control" name="waktu_mulai" value="<?= $jadwal->jam_masuk; ?>">
+                                <input type="time" class="form-control" name="waktu_mulai" value="<?= $jadwal->jam_masuk; ?>" required>
                             </div>
                         </div>
                         <div class="modal-footer">

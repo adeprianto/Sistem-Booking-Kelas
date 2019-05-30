@@ -8,17 +8,17 @@
             <div class="form-group">
                 <label>Kode Mata Kuliah</label>
                 <input type="text" class="form-control" name="kode_matkul" placeholder="Masukkan kode mata kuliah">
-                <?= form_error('kode_matkul', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('kode_matkul', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>Nama Mata Kuliah</label>
                 <input type="text" class="form-control" name="nama_matkul" placeholder="Masukkan nama mata kuliah">
-                <?= form_error('nama_matkul', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('nama_matkul', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <div class="form-group">
                 <label>SKS</label>
                 <input type="text" class="form-control" name="sks" placeholder="Masukkan SKS mata kuliah">
-                <?= form_error('sks', '<small class="text-danger pl-3">', '</small>') ?>
+                <?= form_error('sks', '<small class="text-danger pl-1">', '</small>') ?>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -58,14 +58,13 @@
                 </div>
                 <form action="<?= base_url() . 'kelas/modelEditKelas/' . $kelas->id_ruangan; ?>" method="post">
                     <div class="modal-body">
-
                         <div class="form-group">
                             <label>Nama Kelas</label>
-                            <input type="text" class="form-control" name="nama_kelas" value="<?= $kelas->nama_ruangan; ?>" placeholder="Masukkan nama kelas">
+                            <input type="text" class="form-control" name="nama_kelas" value="<?= $kelas->nama_ruangan; ?>" placeholder="Masukkan nama kelas" required>
                         </div>
                         <div class="form-group">
                             <label>Kapasitas</label>
-                            <input type="text" class="form-control" name="kapasitas" value="<?= $kelas->kapasitas; ?>" placeholder="Masukkan kapasitas kelas yang dapat ditampung">
+                            <input type="text" class="form-control" name="kapasitas" value="<?= $kelas->kapasitas; ?>" placeholder="Masukkan kapasitas kelas yang dapat ditampung" required>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -81,46 +81,38 @@
 
     <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Info Penggunaan Kelas</h3>
 
-    <div class=" row">
-        <div class="col-lg-4 pb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Booking</a>
-                    <a href="#" class="btn btn-primary ml-3">Info</a>
-                </div>
-            </div>
-        </div>
+    <div class=" row mb-5">
+        <?php $i = 1;
+        foreach ($data_kelas as $kelas) {
+            $used = false;
 
-        <div class="col-lg-4 pb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 badge badge-success">Kosong</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Booking</a>
-                    <a href="#" class="btn btn-primary ml-3">Info</a>
-                </div>
-            </div>
-        </div>
+            foreach ($data_booking as $booking) {
+                if (($booking->id_ruangan == $kelas->id_ruangan) && ($booking->id_booking != null) && ($booking->waktu_mulai <= date('H:i')) && ($booking->waktu_akhir >= date('H:i'))) {
+                    $used = true;
+                }
+            } ?>
 
-        <div class="col-lg-4 pb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Booking</a>
-                    <a href="#" class="btn btn-primary ml-3">Info</a>
+            <div class="col-lg-4 pb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $kelas->nama_ruangan; ?></h5>
+                        <?php if ($used) { ?>
+                            <h6 class="card-subtitle mb-2 badge p-2 badge-danger">Dipakai</h6>
+                        <?php } else { ?>
+                            <h6 class="card-subtitle mb-2 badge p-2 badge-success">Kosong</h6>
+                        <?php } ?>
+                        <p class="card-text">Ruangan <?= $kelas->nama_ruangan; ?> ini memiliki kapasitas kursi sebanyak <?= $kelas->kapasitas; ?> kursi.</p>
+                        <a href="#" class="btn btn-primary">Info Ruangan</a>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <?php if ($i++ == 3)  break;
+        } ?>
     </div>
 
     <div class="text-center mt-4 mb-5">
-        <button class="btn btn-primary">Lihat Selengkapnya</button>
+        <a href="<?= base_url() . 'user/jadwalKelas'; ?>" class="btn btn-primary">Lihat Selengkapnya</a>
     </div>
 
 </div>

@@ -12,8 +12,8 @@ class Kelas extends CI_Controller
 
     public function addKelas()
     {
-        $this->form_validation->set_rules('nama_kelas', 'Nama kelas', 'required|trim|is_unique[t_ruangan.nama_ruangan]', array('is_unique' => 'Nama ruangan/kelas sudah ada'));
-        $this->form_validation->set_rules('kapasitas', 'Kapasitas', 'required|trim');
+        $this->form_validation->set_rules('nama_kelas', 'nama kelas', 'required|trim|is_unique[t_ruangan.nama_ruangan]', array('is_unique' => 'Nama ruangan/kelas sudah ada'));
+        $this->form_validation->set_rules('kapasitas', 'kapasitas', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = "Tambah Data Kelas";
