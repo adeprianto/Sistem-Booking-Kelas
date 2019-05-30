@@ -62,15 +62,15 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Kode Mata Kuliah</label>
-                            <input type="text" class="form-control" name="kode_matkul" value="<?= $matkul->kode_matkul; ?>" placeholder="Masukkan kode mata kuliah">
+                            <input type="text" class="form-control" name="kode_matkul" value="<?= $matkul->kode_matkul; ?>" placeholder="Masukkan kode mata kuliah" required>
                         </div>
                         <div class="form-group">
                             <label>Nama Mata Kuliah</label>
-                            <input type="text" class="form-control" name="nama_matkul" value="<?= $matkul->nama_matkul; ?>" placeholder="Masukkan nama mata kuliah">
+                            <input type="text" class="form-control" name="nama_matkul" value="<?= $matkul->nama_matkul; ?>" placeholder="Masukkan nama mata kuliah" required>
                         </div>
                         <div class="form-group">
                             <label>SKS</label>
-                            <input type="text" class="form-control" name="sks" value="<?= $matkul->sks; ?>" placeholder="Masukkan SKS mata kuliah">
+                            <input type="text" class="form-control" name="sks" value="<?= $matkul->sks; ?>" placeholder="Masukkan SKS mata kuliah" required>
                         </div>
                     </div>
                     <div class="modal-footer">

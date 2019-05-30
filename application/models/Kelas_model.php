@@ -5,12 +5,18 @@ class Kelas_model extends CI_Model
 {
     public function getAllKelas()
     {
+        $this->db->group_by('nama_ruangan', 'ASC');
         return $this->db->get('t_ruangan')->result();
     }
 
-    public function getPartKelas()
+    public function getKelasById($id)
     {
-        return $this->db->get('t_ruangan', 5)->result();
+        return $this->db->get_where('t_ruangan', ['id_ruangan' => $id])->result();
+    }
+
+    public function getKelasByName()
+    {
+        return $this->db->like('nama_ruangan', $this->input->post('keyword'), 'both')->get('t_ruangan')->result();
     }
 
     public function addKelas()

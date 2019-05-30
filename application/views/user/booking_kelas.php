@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <?= $this->session->flashdata('pesan') ?>
-    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Booking Kelas</h3>
+    <h3 class="text-gray-800 mt-4 mb-4 text-center font-weight-bold">Booking Kelas</h3>
     <form action="<?= base_url() . 'user/bookingKelas'; ?>" method="post" class="col-lg-6 offset-lg-3">
         <div class="form-group">
             <label>Ruangan</label>

@@ -69,8 +69,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">
-                            <i class="fas fa-users fa-sm fa-fw mr-2 text-light"></i>
-                            About Us
+                            <i class="fas fa-list-ul fa-sm fa-fw mr-2 text-light"></i>
+                            List Booking
                         </a>
                     </li>
                 </ul>

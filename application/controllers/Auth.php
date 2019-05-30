@@ -14,8 +14,8 @@ class Auth extends CI_Controller
 	public function index()
 	{
 
-		$this->form_validation->set_rules('username', 'Username', 'required|trim');
-		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+		$this->form_validation->set_rules('username', 'username', 'required|trim');
+		$this->form_validation->set_rules('password', 'password', 'required|trim');
 
 		if ($this->form_validation->run() == false) {
 			$data['judul'] = "Login";
@@ -33,15 +33,15 @@ class Auth extends CI_Controller
 
 		// ========================================= FORM VALIDASI ==============================================
 
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('nama', 'nama', 'required|trim');
 		$this->form_validation->set_rules('nim', 'NIM', 'required|trim');
-		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required|trim');
-		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required|trim');
-		$this->form_validation->set_rules('angkatan', 'Angkatan', 'required|trim');
-		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[t_akun_mhs.username]', array('is_unique' => 'Username sudah digunakan'));
-		$this->form_validation->set_rules('password1', 'Password1', 'required|trim|min_length[6]|matches[password2]', array('required' => 'Kolom Password harus diisi', 'min_length' => 'Password minimum 6 karakter', 'matches' => 'Password tidak sama'));
-		$this->form_validation->set_rules('password2', 'Password2', 'required|trim|matches[password1]', array('required' => 'Kolom Password harus diisi', 'matches' => 'Password tidak sama'));
+		$this->form_validation->set_rules('fakultas', 'fakultas', 'required|trim');
+		$this->form_validation->set_rules('jurusan', 'jurusan', 'required|trim');
+		$this->form_validation->set_rules('angkatan', 'angkatan', 'required|trim');
+		$this->form_validation->set_rules('email', 'email', 'required|trim|valid_email');
+		$this->form_validation->set_rules('username', 'username', 'required|trim|is_unique[t_akun_mhs.username]', array('is_unique' => 'Username sudah digunakan'));
+		$this->form_validation->set_rules('password1', 'password1', 'required|trim|min_length[6]|matches[password2]', array('required' => 'Kolom Password harus diisi', 'min_length' => 'Password minimum 6 karakter', 'matches' => 'Password tidak sama'));
+		$this->form_validation->set_rules('password2', 'password2', 'required|trim|matches[password1]', array('required' => 'Kolom Password harus diisi', 'matches' => 'Password tidak sama'));
 
 
 		// =========================================== CEK VALIDASI ============================================
@@ -83,7 +83,7 @@ class Auth extends CI_Controller
 
 			redirect('admin');
 		} else {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"><strong>Gagal Login!</strong> akun tidak ditemukan atau username dan password tidak benar</div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"><strong>Gagal Login!</strong> akun tidak ada atau username dan password tidak benar</div>');
 			redirect('Auth');
 		}
 	}

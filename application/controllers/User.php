@@ -18,6 +18,7 @@ class User extends CI_Controller
         $data['judul'] = "Halaman Home";
         $data['data_kelas'] = $this->Kelas_model->getAllKelas();
         $data['data_jadwal'] = $this->Jadwal_model->getAllJadwal();
+        $data['data_booking'] = $this->Booking_model->getAllTodayBookingKelas();
 
         $this->load->view('templates/user/header', $data);
         $this->load->view('user/home', $data);
@@ -48,6 +49,14 @@ class User extends CI_Controller
     {
         $data['judul'] = "Halaman Pengunaan Kelas";
 
+        if ($this->input->post('keyword')) {
+            $data['data_kelas'] = $this->Kelas_model->getKelasByName();
+        } else {
+            $data['data_kelas'] = $this->Kelas_model->getAllKelas();
+        }
+
+        $data['data_booking'] = $this->Booking_model->getAllTodayBookingKelas();
+
         $this->load->view('templates/user/header', $data);
         $this->load->view('user/jadwal_kelas', $data);
         $this->load->view('templates/user/footer');
@@ -61,7 +70,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('berita', 'berita kegiatan', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-            $data['judul'] = "Halaman Booking Kelas";
+            $data['judul'] = "Halaman Info Penggunaan Kelas";
             $data['data_kelas'] = $this->Kelas_model->getAllKelas();
 
             $this->load->view('templates/user/header', $data);
@@ -82,6 +91,17 @@ class User extends CI_Controller
                 redirect('user/bookingKelas');
             }
         }
+    }
+
+    public function infoBookingKelas($id)
+    {
+        $data['judul'] = "Halaman Info Kelas";
+        $data['data_kelas'] = $this->Kelas_model->getKelasById($id);
+        $data['data_booking'] = $this->Booking_model->getBookingKelasByUser($id);
+
+        $this->load->view('templates/user/header', $data);
+        $this->load->view('user/info_kelas', $data);
+        $this->load->view('templates/user/footer');
     }
 
     public function logout()

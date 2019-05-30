@@ -7,7 +7,6 @@ class Admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
         $this->load->model('Kelas_model');
         $this->load->model('Matkul_model');
         $this->load->model('Jadwal_model');

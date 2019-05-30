@@ -68,8 +68,8 @@
                 <th scope="col" class="bg-primary text-light">Kelas</th>
                 <th scope="col" class="bg-primary text-light">SKS</th>
                 <th scope="col" class="bg-primary text-light">Ruangan</th>
-                <th scope="col" class="bg-primary text-light">Waktu Mulai</th>
-                <th scope="col" class="bg-primary text-light">Waktu Akhir</th>
+                <th scope="col" class="bg-primary text-light">Mulai</th>
+                <th scope="col" class="bg-primary text-light">Akhir</th>
             </tr>
         </thead>
         <?php foreach ($data_jadwal as $jadwal) : ?>

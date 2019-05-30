@@ -14,11 +14,11 @@ class Jadwal extends CI_Controller
 
     public function addJadwal()
     {
-        $this->form_validation->set_rules('nama_dosen', 'Nama Dosen Pengajar', 'required|trim');
-        $this->form_validation->set_rules('waktu_mulai', 'Waktu mulai', 'required|trim');
-        $this->form_validation->set_rules('jurusan', 'Jurusan', 'required|trim');
-        $this->form_validation->set_rules('angkatan', 'Angkatan', 'required|trim');
-        $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim');
+        $this->form_validation->set_rules('nama_dosen', 'nama dosen pengajar', 'required|trim');
+        $this->form_validation->set_rules('waktu_mulai', 'waktu mulai', 'required|trim');
+        $this->form_validation->set_rules('jurusan', 'jurusan', 'required|trim');
+        $this->form_validation->set_rules('angkatan', 'angkatan', 'required|trim');
+        $this->form_validation->set_rules('kelas', 'kelas', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = "Tambah Jadwal Mata Kuliah";
