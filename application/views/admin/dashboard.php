@@ -155,8 +155,8 @@
         </div>
 
     <?php } else { ?>
-        <div class="text-center mt-5">
-            <h1 class="text-gray-800">Tidak Ada Data Kelas</h1>
+        <div class="text-center my-5">
+            <h4 class="text-gray-800 font-weight-bold"><span class="p-2 badge badge-danger">Tidak Ada Data Kelas</span></h4>
         </div>
     <?php } ?>
 
