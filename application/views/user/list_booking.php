@@ -30,10 +30,14 @@
                         <td class="text-gray-800"><?= $booking->waktu_mulai; ?></td>
                         <td class="text-gray-800"><?= $booking->waktu_akhir; ?></td>
                         <td class="text-center">
-                            <a href="#" data-toggle="modal" data-target="#deleteModal<?= $booking->id_booking; ?>" style="text-decoration: none;">
-                                <i class="fas fa-times-circle px-2 text-danger"></i>
-                                <span class="text-danger">Batalkan</span>
-                            </a>
+                            <?php if ($booking->waktu_mulai >= date("H:i")) { ?>
+                                <a href="#" data-toggle="modal" data-target="#deleteModal<?= $booking->id_booking; ?>" style="text-decoration: none;">
+                                    <i class="fas fa-times-circle px-2 text-danger"></i>
+                                    <span class="text-danger">Batalkan</span>
+                                </a>
+                            <?php } else { ?>
+                                <span class="text-gray-800">Sudah Selesai</span>
+                            <?php } ?>
                         </td>
                     </tr>
                     <?php $i++;

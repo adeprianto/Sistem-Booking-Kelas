@@ -13,7 +13,7 @@
                 <div class="col-lg-10">
                     <form action="" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Cari kelas" name="keyword">
+                            <input type="text" class="form-control" placeholder="Cari kelas" value="<?= set_value('keyword'); ?>" name="keyword">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-primary" type="submit">Cari</button>
                             </div>
