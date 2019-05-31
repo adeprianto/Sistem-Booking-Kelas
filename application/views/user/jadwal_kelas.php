@@ -1,10 +1,8 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <?= $this->session->flashdata('pesan') ?>
-
     <h3 class="text-gray-800 mt-5 mb-2 text-center font-weight-bold">Info Penggunaan Kelas</h3>
-    <hr class="w-25 mb-5" style="border: 1px solid #858796;">
+    <hr class="w-25 mb-5" style="border: 1.5px solid #858796;">
 
     <div class="row mb-4">
         <div class="col-lg-8 offset-lg-2">
@@ -44,9 +42,9 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= $kelas->nama_ruangan; ?></h5>
                             <?php if ($used) { ?>
-                                <h5 class="card-subtitle my-3"><span class="badge badge-danger">Kosong</span></h5>
+                                <h5 class="card-subtitle my-3"><span class="p-2 badge badge-danger">Dipakai</span></h5>
                             <?php } else { ?>
-                                <h5 class="card-subtitle my-3"><span class="badge badge-success">Kosong</span></h5>
+                                <h5 class="card-subtitle my-3"><span class="p-2 badge badge-success">Kosong</span></h5>
                             <?php } ?>
                             <p class="card-text">Ruangan <?= $kelas->nama_ruangan; ?> ini memiliki kapasitas kursi sebanyak <?= $kelas->kapasitas; ?> kursi.</p>
                             <a href="<?= base_url() . 'user/infoBookingKelas/' . $kelas->id_ruangan; ?>" class="btn btn-primary">Info Kelas</a>

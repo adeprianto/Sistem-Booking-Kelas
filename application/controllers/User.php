@@ -9,6 +9,7 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Kelas_model');
+        $this->load->model('Matkul_model');
         $this->load->model('Jadwal_model');
         $this->load->model('Booking_model');
     }
@@ -32,6 +33,16 @@ class User extends CI_Controller
 
         $this->load->view('templates/user/header', $data);
         $this->load->view('user/data_kelas', $data);
+        $this->load->view('templates/user/footer');
+    }
+
+    public function dataMatkul()
+    {
+        $data['judul'] = "Halaman Data Mata Kuliah";
+        $data['data_matkul'] = $this->Matkul_model->getAllMatkul();
+
+        $this->load->view('templates/user/header', $data);
+        $this->load->view('user/data_matkul', $data);
         $this->load->view('templates/user/footer');
     }
 
@@ -62,6 +73,27 @@ class User extends CI_Controller
         $this->load->view('templates/user/footer');
     }
 
+    public function infoBookingKelas($id)
+    {
+        $data['judul'] = "Halaman Info Kelas";
+        $data['data_kelas'] = $this->Kelas_model->getKelasById($id);
+        $data['data_booking'] = $this->Booking_model->getBookingKelasByUser($id);
+
+        $this->load->view('templates/user/header', $data);
+        $this->load->view('user/info_kelas', $data);
+        $this->load->view('templates/user/footer');
+    }
+
+    public function listBookingUser()
+    {
+        $data['judul'] = "Halaman List Booking User";
+        $data['data_booking'] = $this->Booking_model->getBookingKelasUser($this->session->userdata('id'));
+
+        $this->load->view('templates/user/header', $data);
+        $this->load->view('user/list_booking', $data);
+        $this->load->view('templates/user/footer');
+    }
+
     public function bookingKelas()
     {
         $this->form_validation->set_rules('tanggal', 'tanggal', 'required|trim');
@@ -85,7 +117,7 @@ class User extends CI_Controller
             if ($this->db->get()->num_rows() == 0) {
                 $this->Booking_model->bookingKelas();
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> kelas sudah dibooking</div>');
-                redirect('user/jadwalKelas');
+                redirect('user/listBookingUser');
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"><strong>Maaf</strong>, kelas <strong>tidak tersedia</strong> untuk dibooking</div>');
                 redirect('user/bookingKelas');
@@ -93,15 +125,11 @@ class User extends CI_Controller
         }
     }
 
-    public function infoBookingKelas($id)
+    public function cancelBookingKelas($id)
     {
-        $data['judul'] = "Halaman Info Kelas";
-        $data['data_kelas'] = $this->Kelas_model->getKelasById($id);
-        $data['data_booking'] = $this->Booking_model->getBookingKelasByUser($id);
-
-        $this->load->view('templates/user/header', $data);
-        $this->load->view('user/info_kelas', $data);
-        $this->load->view('templates/user/footer');
+        $this->Booking_model->cancelBookingKelas($id);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"><strong>Berhasil</strong> membatalkan kelas</div>');
+        redirect('user/listBookingUser');
     }
 
     public function logout()

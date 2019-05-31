@@ -3,47 +3,59 @@
 
     <?= $this->session->flashdata('pesan') ?>
 
-    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Edit Mata Kuliah</h3>
+    <?php if ($data_matkul) { ?>
 
-    <table class=" table table-bordered bg-white mb-5">
-        <thead>
-            <tr>
-                <th scope="col" class="bg-primary text-light">No.</th>
-                <th scope="col" class="bg-primary text-light">Kode Mata Kuliah</th>
-                <th scope="col" class="bg-primary text-light">Nama Mata Kuliah</th>
-                <th scope="col" class="bg-primary text-light">SKS</th>
-                <th scope="col" class="bg-primary text-light text-center w-25">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $i = 1;
-            foreach ($data_matkul as $matkul) { ?>
+        <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Edit Mata Kuliah</h3>
+
+        <table class=" table table-bordered bg-white mb-5">
+            <thead>
                 <tr>
-                    <th scope="row" class="text-gray-800"><?= $i; ?></th>
-                    <td class="text-gray-800"><?= $matkul->kode_matkul; ?></td>
-                    <td class="text-gray-800"><?= $matkul->nama_matkul; ?></td>
-                    <td class="text-gray-800"><?= $matkul->sks; ?></td>
-                    <td class="w-25">
-                        <div class="row offset-lg-1">
-                            <div class="col-6">
-                                <a href="#" data-toggle="modal" data-target="#editModal<?= $matkul->id_matkul; ?>" style="text-decoration: none;">
-                                    <i class="fas fa-pen px-2 text-success"></i>
-                                    <span class="text-success">Edit</span>
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" data-toggle="modal" data-target="#deleteModal<?= $matkul->id_matkul; ?>" style="text-decoration: none;">
-                                    <i class="fas fa-trash px-2 text-danger"></i>
-                                    <span class="text-danger">Delete</span>
-                                </a>
-                            </div>
-                        </div>
-                    </td>
+                    <th scope="col" class="bg-primary text-light">No.</th>
+                    <th scope="col" class="bg-primary text-light">Kode Mata Kuliah</th>
+                    <th scope="col" class="bg-primary text-light">Nama Mata Kuliah</th>
+                    <th scope="col" class="bg-primary text-light">SKS</th>
+                    <th scope="col" class="bg-primary text-light text-center w-25">Action</th>
                 </tr>
-                <?php $i++;
-            } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php $i = 1;
+                foreach ($data_matkul as $matkul) { ?>
+                    <tr>
+                        <th scope="row" class="text-gray-800"><?= $i; ?></th>
+                        <td class="text-gray-800"><?= $matkul->kode_matkul; ?></td>
+                        <td class="text-gray-800"><?= $matkul->nama_matkul; ?></td>
+                        <td class="text-gray-800"><?= $matkul->sks; ?></td>
+                        <td class="w-25">
+                            <div class="row offset-lg-1">
+                                <div class="col-6">
+                                    <a href="#" data-toggle="modal" data-target="#editModal<?= $matkul->id_matkul; ?>" style="text-decoration: none;">
+                                        <i class="fas fa-pen px-2 text-success"></i>
+                                        <span class="text-success">Edit</span>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" data-toggle="modal" data-target="#deleteModal<?= $matkul->id_matkul; ?>" style="text-decoration: none;">
+                                        <i class="fas fa-trash px-2 text-danger"></i>
+                                        <span class="text-danger">Delete</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php $i++;
+                } ?>
+            </tbody>
+        </table>
+
+    <?php } else { ?>
+
+        <div class="text-center" style="margin-top: 250px;">
+            <h1 class="text-gray-800">Tidak Ada Data Mata Kuliah</h1>
+        </div>
+
+    <?php } ?>
+
+
 </div>
 <!-- /.container-fluid -->
 

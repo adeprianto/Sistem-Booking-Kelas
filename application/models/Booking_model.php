@@ -17,6 +17,16 @@ class Booking_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function getBookingKelasUser($id)
+    {
+        $this->db->select('id_booking, nama, nim, fakultas, jurusan, angkatan, nama_ruangan, tanggal, berita_kegiatan, TIME_FORMAT(waktu_mulai, "%H:%i") as waktu_mulai, TIME_FORMAT(waktu_akhir, "%H:%i") as waktu_akhir');
+        $this->db->from('t_booking_kelas, t_mahasiswa, t_ruangan');
+        $this->db->where('t_booking_kelas.id_mahasiswa = t_mahasiswa.id AND t_booking_kelas.id_ruangan = t_ruangan.id_ruangan AND id_mahasiswa = ' . $id . ' AND tanggal >= CURDATE()');
+        $this->db->order_by('tanggal', 'ASC');
+        $this->db->order_by('waktu_mulai', 'ASC');
+        return $this->db->get()->result();
+    }
+
     public function bookingKelas()
     {
         $data = [
@@ -29,5 +39,9 @@ class Booking_model extends CI_Model
         ];
 
         $this->db->insert('t_booking_kelas', $data);
+    }
+
+    public function cancelBookingKelas($id) {
+        $this->db->delete('t_booking_kelas', ['id_booking' => $id]);
     }
 }

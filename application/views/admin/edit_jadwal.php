@@ -3,57 +3,68 @@
 
     <?= $this->session->flashdata('pesan') ?>
 
-    <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Edit Mata Kuliah</h3>
+    <?php if ($data_jadwal) { ?>
 
-    <table class=" table table-bordered bg-white mb-5">
-        <thead>
-            <tr>
-                <th scope="col" class="bg-primary text-light">Hari</th>
-                <th scope="col" class="bg-primary text-light">Mata Kuliah</th>
-                <th scope="col" class="bg-primary text-light">Nama Dosen</th>
-                <th scope="col" class="bg-primary text-light">Jurusan</th>
-                <th scope="col" class="bg-primary text-light">Angkatan</th>
-                <th scope="col" class="bg-primary text-light">Kelas</th>
-                <th scope="col" class="bg-primary text-light">Ruangan</th>
-                <th scope="col" class="bg-primary text-light">Mulai</th>
-                <th scope="col" class="bg-primary text-light">Akhir</th>
-                <th scope="col" class="bg-primary text-light text-center w-25">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $i = 1;
-            foreach ($data_jadwal as $jadwal) { ?>
+        <h3 class="text-gray-800 mt-5 mb-4 text-center font-weight-bold">Edit Mata Kuliah</h3>
+
+        <table class=" table table-bordered bg-white mb-5">
+            <thead>
                 <tr>
-                    <td class="text-gray-800"><?= $jadwal->hari; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->nama_matkul; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->nama_dosen; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->jurusan; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->angkatan; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->kelas; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->nama_ruangan; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->waktu_mulai; ?></td>
-                    <td class="text-gray-800"><?= $jadwal->waktu_akhir; ?></td>
-                    <td class="w-25">
-                        <div class="row offset-lg-1">
-                            <div class="col-6">
-                                <a href="#" data-toggle="modal" data-target="#editModal<?= $jadwal->id_jadwal; ?>" style="text-decoration: none;">
-                                    <i class="fas fa-pen px-2 text-success"></i>
-                                    <span class="text-success">Edit</span>
-                                </a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" data-toggle="modal" data-target="#deleteModal<?= $jadwal->id_jadwal; ?>" style="text-decoration: none;">
-                                    <i class="fas fa-trash px-2 text-danger"></i>
-                                    <span class="text-danger">Delete</span>
-                                </a>
-                            </div>
-                        </div>
-                    </td>
+                    <th scope="col" class="bg-primary text-light">Hari</th>
+                    <th scope="col" class="bg-primary text-light">Mata Kuliah</th>
+                    <th scope="col" class="bg-primary text-light">Nama Dosen</th>
+                    <th scope="col" class="bg-primary text-light">Jurusan</th>
+                    <th scope="col" class="bg-primary text-light">Angkatan</th>
+                    <th scope="col" class="bg-primary text-light">Kelas</th>
+                    <th scope="col" class="bg-primary text-light">Ruangan</th>
+                    <th scope="col" class="bg-primary text-light">Mulai</th>
+                    <th scope="col" class="bg-primary text-light">Akhir</th>
+                    <th scope="col" class="bg-primary text-light text-center w-25">Action</th>
                 </tr>
-                <?php $i++;
-            } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php $i = 1;
+                foreach ($data_jadwal as $jadwal) { ?>
+                    <tr>
+                        <td class="text-gray-800"><?= $jadwal->hari; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->nama_matkul; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->nama_dosen; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->jurusan; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->angkatan; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->kelas; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->nama_ruangan; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->waktu_mulai; ?></td>
+                        <td class="text-gray-800"><?= $jadwal->waktu_akhir; ?></td>
+                        <td class="w-25">
+                            <div class="row offset-lg-1">
+                                <div class="col-6">
+                                    <a href="#" data-toggle="modal" data-target="#editModal<?= $jadwal->id_jadwal; ?>" style="text-decoration: none;">
+                                        <i class="fas fa-pen px-2 text-success"></i>
+                                        <span class="text-success">Edit</span>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" data-toggle="modal" data-target="#deleteModal<?= $jadwal->id_jadwal; ?>" style="text-decoration: none;">
+                                        <i class="fas fa-trash px-2 text-danger"></i>
+                                        <span class="text-danger">Delete</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php $i++;
+                } ?>
+            </tbody>
+        </table>
+
+    <?php } else { ?>
+
+        <div class="text-center" style="margin-top: 250px;">
+            <h1 class="text-gray-800">Tidak Ada Data Jadwal Kuliah</h1>
+        </div>
+
+    <?php } ?>
+
 
     <!-- Edit Modal-->
     <?php foreach ($data_jadwal as $jadwal) : ?>
