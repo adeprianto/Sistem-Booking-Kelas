@@ -146,7 +146,7 @@
                                 <h5 class="card-subtitle my-3"><span class="p-2 badge badge-success">Kosong</span></h5>
                             <?php } ?>
                             <p class="card-text">Ruangan <?= $kelas->nama_ruangan; ?> ini memiliki kapasitas kursi sebanyak <?= $kelas->kapasitas; ?> kursi.</p>
-                            <a href="#" class="btn btn-primary">Info Kelas</a>
+                            <a href="<?= base_url() . 'admin/infoBookingKelas/' . $kelas->id_ruangan; ?>" class="btn btn-primary">Info Kelas</a>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+<!-- Begin Page Content -->
 <div class="container-fluid">
 
     <h3 class="text-gray-800 mt-5 mb-2 text-center font-weight-bold">Info Kelas <?= $data_kelas[0]->nama_ruangan; ?></h3>
@@ -79,3 +80,7 @@
     <?php } ?>
 
 </div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->

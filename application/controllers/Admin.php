@@ -28,6 +28,19 @@ class Admin extends CI_Controller
         $this->load->view('templates/admin/footer');
     }
 
+    public function infoBookingKelas($id)
+    {
+        $data['judul'] = "Halaman Info Kelas";
+        $data['data_kelas'] = $this->Kelas_model->getKelasById($id);
+        $data['data_booking'] = $this->Booking_model->getBookingKelasByUser($id);
+
+        $this->load->view('templates/admin/header', $data);
+        $this->load->view('templates/admin/sidebar');
+        $this->load->view('templates/admin/topbar');
+        $this->load->view('admin/info_kelas', $data);
+        $this->load->view('templates/admin/footer');
+    }
+
     public function logout()
     {
         $this->session->sess_destroy();

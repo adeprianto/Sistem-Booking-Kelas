@@ -30,7 +30,7 @@
                         <td class="text-gray-800"><?= $booking->waktu_mulai; ?></td>
                         <td class="text-gray-800"><?= $booking->waktu_akhir; ?></td>
                         <td class="text-center">
-                            <?php if ($booking->waktu_mulai >= date("H:i")) { ?>
+                            <?php if ($booking->waktu_mulai >= date("H:i") || $booking->tanggal >= date("Y-m-d")) { ?>
                                 <a href="#" data-toggle="modal" data-target="#deleteModal<?= $booking->id_booking; ?>" style="text-decoration: none;">
                                     <i class="fas fa-times-circle px-2 text-danger"></i>
                                     <span class="text-danger">Batalkan</span>
