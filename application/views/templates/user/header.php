@@ -56,6 +56,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-light" href="<?= base_url() . 'user/dataMatkul'; ?>">
+                            <i class="fas fa-list-ul fa-sm fa-fw mr-2 text-light"></i>
+                            Mata Kuliah
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-light" href="<?= base_url() . 'user/jadwalMatkul'; ?>">
                             <i class="fas fa-calendar-alt fa-sm fa-fw mr-2 text-light"></i>
                             Jadwal Kuliah
@@ -64,12 +70,12 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="<?= base_url() . 'user/jadwalKelas'; ?>">
                             <i class="fas fa-clipboard-check mr-2 text-light"></i>
-                            Booking Kelas
+                            Penggunaan Kelas
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
-                            <i class="fas fa-list-ul fa-sm fa-fw mr-2 text-light"></i>
+                        <a class="nav-link text-light" href="<?= base_url() . 'user/listBookingUser'; ?>">
+                            <i class="fas fa-bookmark fa-sm fa-fw mr-2 text-light"></i>
                             List Booking
                         </a>
                     </li>
